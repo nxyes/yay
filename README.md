@@ -1,4 +1,4 @@
-
+```mermaid
 graph TD
     %% 子图定义：使用方括号 [] 包裹标题，避免特殊字符报错
     subgraph FastLoop [Fast Loop - UI and Inference]
@@ -16,3 +16,4 @@ graph TD
     end
     
     H -->|Filter and Merge| I[Final Report.txt]
+```
