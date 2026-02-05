@@ -27,7 +27,16 @@ graph TD
 ```
 
 
+```mermaid
 flowchart LR
     Camera[RGB-D 相机] -->|RGB/Depth| FastLoop[fast_processing_loop\nYOLO分割 + 纹理绘制]
+    Camera -->|Depth/Info| SlowLoop[slow_visualization_loop\n3D尺寸 + 全局去重]
+
+    subgraph YoloNode["YoloGlobalInspection (reconstruction_threads.py)"]
+        FastLoop -->|共享结果| SlowLoop
+    end
+
     FastLoop -->|/camera/camera/color/image_painted| RTAB[RTAB-Map / RViz2]
+    Tag[AprilTag 节点] -->|TF坐标| SlowLoop
     SlowLoop -->|DefectManager| Report[final_report.txt]
+```
