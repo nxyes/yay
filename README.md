@@ -18,12 +18,7 @@ graph TD
     
     %% 最终输出
     H -->|过滤与合并| I[最终报告]
-    
-    %% 样式调整（可选，用于增强可读性）
-    style FastLoop fill:#e1f5fe,stroke:#01579b
-    style SlowLoop fill:#fff3e0,stroke:#e65100
-    style E fill:#ffccbc,stroke:#bf360c
-    style H fill:#c8e6c9,stroke:#2e7d32
+
 ```
 
 
